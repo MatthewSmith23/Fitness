@@ -16,7 +16,7 @@ app.use(logger('dev'));
 app.use(require("./routes/apiroutes.js"));
 app.use(require("./routes/htmlroutes.js"));
 
-mongoose.connect(process.env.MONGODb_URI || 'mongodb://localhost/fitApp', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/fitness-tracker', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
