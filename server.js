@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 app.use(logger('dev'));
 
-app.use(require("./routes/apiroutes,js"));
+app.use(require("./routes/apiroutes.js"));
 app.use(require("./routes/htmlroutes.js"));
 
 mongoose.connect(process.env.MONGODb_URI || 'mongodb://localhost/fitApp', {
