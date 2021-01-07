@@ -1,6 +1,18 @@
 const router = require("express").Router();
 const { Workout } = require("../models");
 
+router.get("/api/workouts", (req,res) => {
+    console.log('Get api/workouts')
+    Workout.find({}, (err,data) => {
+        if (err) {
+            res.status(400).json(err);
+        } else {
+            res.json(data);
+        }
+    })
+});
+
+
 router.post("/api/workouts", ({ body }, res) => {
     console.log('Post api/workouts')
     Workout.create(body)
@@ -27,7 +39,7 @@ router.put("/api/workouts/:id", (req, res) => {
     });
 });
 
-router.get("/api/wokrouts/range", (req,res) => {
+router.get("/api/workouts/range", (req,res) => {
     console.log('Get api/workouts/range')
     Workout.find({}, (err,data) => {
         if (err) {
